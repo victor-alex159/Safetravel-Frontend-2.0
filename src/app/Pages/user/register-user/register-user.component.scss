@@ -1,0 +1,171 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    section {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+    
+    section .imgBx {
+        position: relative;
+        width: 50%;
+        height: 100%;
+    }
+    
+    section .imgBx img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    section .contentBx {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+        background-color: #FF8F47;
+    }
+    
+    section .contentBx .formBx {
+        height: 100%;
+        width: 60%;
+        margin-bottom: 5px;
+        padding-right: 5px;
+    }
+    
+    .notShow {
+        display: none;
+    }
+    
+    section .contentBx .formBx h5 {
+        margin-bottom: 5px;
+        border-bottom: 2px solid rgb(39, 39, 39);
+    }
+    
+    section .contentBx .formBx .title {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin-top: 30px;
+    }
+    
+    section .contentBx .formBx h2 {
+        color: #000;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        display: inline-block;
+        letter-spacing: 1px;
+    }
+    
+    section .contentBx .formBx .inputBx {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    section .contentBx .formBx .inputBx select {
+        background: transparent;
+        border-radius: 30px;
+        width: 50%;
+        border: 2px solid #373838;
+        outline: none;
+    }
+    
+    section .contentBx .formBx .inputBx p {
+        color: rgb(26, 25, 25)!important;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+    
+    section .contentBx .formBx .inputBx label {
+        font-size: 13px;
+        margin-bottom: 5px;
+        color: #000;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    
+    section .contentBx .formBx .inputBx span {
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: #000;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    
+    section .contentBx .formBx .inputBx input {
+        width: 50%;
+        padding: 10px 20px;
+        outline: none;
+        font-weight: 400;
+        font-size: 14px;
+        border: 2px solid #373838;
+        letter-spacing: 1px;
+        color: #000;
+        background: transparent;
+        border-radius: 30px;
+    }
+    
+    section .contentBx .formBx .inputBx .login {
+        width: 100%;
+    }
+    
+    section .contentBx .formBx .inputBx input[type="submit"] {
+        background: #e91e63;
+        color: white;
+        cursor: pointer;
+        outline: none;
+        font-weight: 500;
+        width: 50%;
+        position: relative;
+        left: 24%;
+        margin-top: 10px;
+    }
+    
+    section .contentBx .formBx .inputBx input[type="submit"]:hover {
+        background: #b82d5b;
+    }
+    
+    section .contentBx .formBx .inputBx p a {
+        color: #e91e63;
+        text-decoration: none;
+    }
+    
+    @media (max-width:928px) {
+        section .imgBx {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        section .contentBx {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        section .contentBx .formBx {
+            width: 100%;
+            background: rgb(255 143 71 / 80%);
+            padding: 40px;
+            margin: 50px;
+        }
+        section .contentBx .formBx .inputBx p {
+            color: #607d8b;
+            font-size: 17px;
+        }
+    }

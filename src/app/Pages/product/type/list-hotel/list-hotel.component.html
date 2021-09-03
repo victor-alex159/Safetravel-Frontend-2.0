@@ -1,0 +1,56 @@
+<div class="container mt-4 animated fadeIn">
+    <div class="row mb-4 d-flex justify-content-center">
+        <form class="w-50" [formGroup]="formSearch" (ngSubmit)="sendNameProduct()" novalidate>
+            <input class="form-control" type="search" formControlName="productName" aria-label="Search" placeholder="Buscar...">
+            <div class="col text-center mt-3">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="row" style="margin-top: 60px;" *ngFor="let hotel of listHotels">
+        <div class="col-md-4 mb-4 mt-3">
+            <div class="card shadow">
+             <img class="card-img-top" [src]="hotel.imageFile">
+              <div class="card-body p-1">
+                <h5 class="card-title text-center">{{hotel.name}}</h5>
+              </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="col mb-2 p-0">
+                <div class="card shadow">
+                    <div class="card-header font-weight-bold">
+                        <h5>Informacion</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 mt-4">
+                            <div class="container text-center">
+                                <h2>{{currentRate}}</h2>
+                                <ngb-rating [(rate)]="currentRate" [readonly]="true"></ngb-rating>
+                            </div>
+                        </div>
+                        <div class="col-8 card-body">
+                          <p class="card-text p-2">{{hotel.longDescription}}</p>
+                          <div class="col d-flex justify-content-end">
+                              <a (click)="getProductId(hotel.id)" class="btn btn-primary">Ver Información</a>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4 card shadow">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Servicios</h5>
+                    <div class="container">
+                        <i class="fas fa-wifi ml-4" style="color: blue;"><span>WIFI</span></i>
+                        <i class="fas fa-utensils ml-4" style="color: wheat;"><span>Restaurante</span></i>
+                        <i class="fas fa-warehouse ml-4" style="color: steelblue;"><span>Cochera</span></i>
+                        <i class="fas fa-swimmer ml-4" style="color: lightblue;"><span>Piscinas</span></i>
+                        <i class="fas fa-dice ml-4" style="color: chocolate;"><span>Centros recreativos</span></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

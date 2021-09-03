@@ -1,0 +1,66 @@
+<section class="section-validarproduct">
+    <div class="container-fluid">
+      <div class="row container-validarproduct">
+        <div class="col-12 d-flex justify-content-center align-items-center">
+          <div class="container-title text-center text-white align-self-center">
+            <p>Validar Empresas</p>
+          </div>
+        </div>
+      </div>
+      <div class="headerTabla animated fadeIn">
+        <div class="container-fluid" >
+            <div class="row">
+              <div class="col-3 col-md-3  col-md-3 col-lg mostrar">
+            </div>
+                <div class="inputHeaderTabla">
+                    <div class="col-3 col-md-3 col-md-3 col-lg">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="tablaOrganizacion animated fadeIn">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col-12 ">N°</th>
+                <th scope="col-12 ">Organizacion</th>
+                <!-- <th scope="col-12 ">RUC</th> -->
+                <th scope="col-12 ">Ubicacion</th>
+                <th scope="col-12 ">Correo de Gerente</th>
+                <th scope="col-12 ">Telefono</th>
+                <th scope="col-12 ">Categoria</th>
+                <th scope="col-12 " class="d-flex justify-content-center">Aceptar/Denegar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of productsList | slice: (page-1) * pageSize : page * pageSize; index as i">
+                  <th scope="row">{{ i+1 }}</th>
+                  <td>{{product.name}}</td>
+                  <!-- <td>{{product.ruc}}</td> -->
+                  <td>{{product.ubication}}</td>
+                  <td>{{product.emailAdmin}}</td>
+                  <td>{{product.type}}</td>
+                  <td>2578732</td>
+                  <td>
+                    <div class="d-flex justify-content-center">
+                      <button class="btn btn-success mr-sm-2" *ngIf="this.authService.hasRole('Administrador')" (click)="validateProduct(product.id)"><i class="fas fa-check"></i></button>
+                      <button class="btn btn-danger" *ngIf="this.authService.hasRole('Administrador')" (click)="deniedProduct(product.id)"><i class="fas fa-times"></i></button>
+                    </div>
+                    <!-- <div *ngIf="canceledValidate" class="d-flex justify-content-center">
+                      <button class="btn btn-danger" *ngIf="this.authService.hasRole('Administrador')" (click)="removeSelectValidate(product.id)"><i class="fas fa-times"></i>   Cancelar</button>
+                    </div> -->
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+        <ngb-pagination class="d-flex justify-content-center" [(page)]="page" [pageSize]="pageSize" [collectionSize]="productsList.length"></ngb-pagination>
+    </div>
+    </div>
+    
+  </section>
+

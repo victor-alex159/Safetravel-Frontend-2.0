@@ -1,0 +1,197 @@
+.hotel{
+    // background: radial-gradient(ellipse, aqua, white);
+    background: rgb(162,201,239);
+    background: linear-gradient(90deg, rgba(162,201,239,1) 5%, rgba(255,255,255,1) 98%);
+}
+.search {
+    background-image: url('../../../assets/images/fondo-search.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    .body-search {
+        margin-top: 180px;
+    }
+}
+
+.restaurante{
+    // background: radial-gradient(ellipse, rgb(255, 136, 0), white);
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 5%, rgba(250,219,193,1) 98%);
+}
+.hotelcard{
+    padding: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 50px;
+    background-position: center center;
+    // border: 4px solid white;
+    background-color: white;
+    border-radius: 7px;
+    color:#0075e0;
+    font-size: 30px;
+}
+
+.restaurantecard{
+    padding: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 50px;
+    background-position: center center;
+    // border: 4px solid white;
+    background-color: white;
+    border-radius: 7px;
+    color:#ff8f47;
+    font-size: 30px;
+}
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+
+}
+// .tres-culumnas{
+//     display: grid;
+//     grid-template-columns: repeat(3,1fr);
+//     column-gap: 2rem;
+// }
+
+// cards
+.card {
+    border-radius: 15px;
+}
+
+.card img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.card-title{
+    text-align: center;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    // font-weight: bold;
+}
+/** CODIGO AQUI **/
+@media (min-width: 768px) {
+    .tres-columnas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+    }
+}
+img {
+    max-width: 100%;
+    height: 300px;
+    width: 350px;
+}
+h2{
+    text-align: center;
+}
+article{
+    background-position: center center;
+    border: 1px solid black;
+    background: radial-gradient(ellipse, rgb(133, 128, 128), white);
+}
+
+.info-about {
+    .imagen-nosotros {
+        max-width: 100%;
+        height: auto;
+        /* directorio donde se ubica el la imagen de fondo de pantalla de la seccion nosotros*/
+        background-image: url('../../../assets/images/nosotros.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    
+    .title-nosotros{
+        color: black;
+        background-color: white;
+        text-align: center;
+        border-radius: 1rem;
+        margin-top: 50px;
+        width: 110px;
+    }
+    
+    .title-nosotros h1 {
+        font-size: 20px;
+    }
+    
+    .container-form {
+        /* border: 1px solid red; */
+        width: 100%;
+        height: auto;
+    
+    }
+    
+    .container-text {
+        font-size: 13px;
+    }
+    
+    .consulta p {
+        font-size: 1.2rem;
+        margin-right: 20px;
+    }
+    
+    .boton-form button {
+        width: 90px;
+        border: 2.5px solid white
+    }
+    
+}
+@media screen and (min-width: 1500px){
+    .form-group {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+
+@media (max-width: 767px) and (min-width:576px) {
+    .form-group {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+    }
+}
+
+
+@media (max-width: 1799px) and (min-width:992px) {
+    .title-nosotros {
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .title-nosotros {
+        width: 280px;
+    }
+}
+@media screen and (min-width: 1800px) {
+    .title-nosotros h1 {
+        font-size: 2.5rem;
+    }
+} 
+@media (max-width: 1799px) and (min-width:992px) {
+    .title-nosotros h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 991px) and (min-width:568px) {
+    .title-nosotros h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .container-text {
+        padding: 6rem;
+        font-size: 2rem;
+    }
+}

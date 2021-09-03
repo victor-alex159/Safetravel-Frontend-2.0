@@ -1,0 +1,78 @@
+<!--VENTANA MODAL-->
+<div class="hola">
+
+
+    <div>
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content vModal">
+                <!-- Encabezado del Modal -->
+                <div class="modal-header">
+                    <h5 *ngIf="!edit" id="tituloVentana" class="titulo-modal">Nueva Organización</h5>
+                    <h5 *ngIf="edit" id="tituloVentana" class="titulo-modal">Editar Organización</h5>
+                    <button class="close" (click)="activeModal.close('Close click')" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Cuerpo del modal-->
+                <div class="modal-body">
+                    <form [formGroup]="formRegisterOrganization" (ngSubmit)="save(formRegisterOrganization)">
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Organización</label>
+                            <div class="col-sm-10">
+                                <input formControlName="nameOrganization" type="text" class="form-control" id="inputEmail3" placeholder="Organización">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">RUC</label>
+                            <div class="col-sm-10">
+                                <input formControlName="ruc" class="form-control" placeholder="RUC">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Ubicación</label>
+                            <div class="col-sm-10">
+                                <input formControlName="direction" class="form-control" placeholder="Ubicación">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre del gerente</label>
+                            <div class="col-sm-10">
+                                <input formControlName="managerName" class="form-control" placeholder="Gerente">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Teléfono del gerente</label>
+                            <div class="col-sm-10">
+                                <input formControlName="managerPhone" class="form-control" placeholder="Gerente">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Email del gerente</label>
+                            <div class="col-sm-10">
+                                <input formControlName="managerEmail" class="form-control" placeholder="Gerente">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Teléfono</label>
+                            <div class="col-sm-10">
+                                <input formControlName="phone" class="form-control" placeholder="Teléfono">
+                            </div>
+                        </div>
+
+                        <!-- Pie de pagina del modal -->
+                        <div class="modal-footer">
+                            <button *ngIf="!edit" type="submit" class="btn btn-success"><i class="fas fa-check"></i> Agregar</button>
+                            <button *ngIf="edit" type="submit" class="btn btn-success"><i class="fas fa-check"></i> Editar</button>
+                            <button type="button" class="btn btn-danger" (click)="activeModal.close('Close click')"><i class="fas fa-times"></i>
+                                Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin Cuerpo del modal-->

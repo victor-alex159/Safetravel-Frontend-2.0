@@ -1,0 +1,40 @@
+<!-- Iniciar sesion -->
+<section class="animated fadeIn">
+    <div class="imgBx">
+        <img src="../../../assets/images/login.jpg" alt="login.jgp">
+    </div>
+    <div class="contentBx">
+        <div class="formBx">
+            <div class="title">
+                <h2>Iniciar Sesión</h2>
+            </div>
+            <form action="" [formGroup]="formLogin" (ngSubmit)="login(formLogin)" novalidate>
+                <div class="inputBx">
+                    <span>Usuario</span>
+                    <input type="text" formControlName="username">
+                    <div *ngIf="isLogged && formLogin.controls['username'].errors">
+                        <span *ngIf="formLogin.controls['username'].errors.required" class="text-danger">
+                            Usuario es requerido
+                        </span>
+                    </div>
+                </div>
+                <div class="inputBx">
+                    <span>Contraseña</span>
+                    <input type="password" formControlName="password">
+                    <div *ngIf="isLogged && formLogin.controls['password'].errors">
+                        <span *ngIf="formLogin.controls['password'].errors.required" class="text-danger">
+                            Contraseña es requerido
+                        </span>
+                    </div>
+                </div>
+                <div class="forget">
+                    <a> Olvidé mi contraseña</a>
+                </div>
+                <div class="inputBx login">
+                    <input type="submit" value="Ingresar">
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>

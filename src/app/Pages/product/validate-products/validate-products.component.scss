@@ -1,0 +1,105 @@
+/*  ESTILOS DE DISEÑO  */
+
+.imagen-nosotros {
+    max-width: 100%;
+    height: auto;
+    background-image: url('/images/nosotros.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container-validarproduct {
+    height: 120px;
+    background: #000000;
+}
+
+.container-title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 60px;
+    /* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.container-initialtable {
+    height: 120px;
+    background: #F1F1F1;
+}
+
+.buscar {
+    width: 241px;
+    height: 40px;
+    left: 1139px;
+    top: 330px;
+    background: #FFFFFF;
+    border-radius: 15px;
+} 
+
+.container-table {
+    border: 1px solid black;
+}
+
+.text-table {
+    border-bottom: 1px solid black;
+}
+
+.texto-main {
+    width: 171px;
+    height: 30px;
+    left: 23px;
+    top: 431px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 37px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+}
+.texto {
+    width: 171px;
+    height: 30px;
+    left: 23px;
+    top: 490px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 37px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+}
+
+.table-end {
+    background: #F1F1F1;
+    height: 180px;
+}
+
+/* .btn {
+    height: 50px;
+    border-radius: 15px;
+    width: 50px;
+} */
+.headerTabla{
+    background-color: var(--color-navbar);
+    padding: 30px 0 30px 0;
+  }
+  
+.inputHeaderTabla{
+margin-right: 30px;
+}
+.headerTabla .mostrar {
+padding-left: 40px !important;
+} 

@@ -1,0 +1,37 @@
+/* TITULO EMPRESA */
+.tituloOrganizacion{
+    background-color: var(--color-negro);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.tituloOrga{
+    color: var(--color-white);
+}
+
+/* HEADER TABLA */
+.headerTabla{
+  background-color: var(--color-navbar);
+  padding: 30px 0 30px 0;
+}
+
+.inputHeaderTabla{
+  margin-right: 30px;
+}
+
+.headerTabla .mostrar {
+  padding-left: 40px !important;
+}
+
+.tablaOrganizacion{
+  padding: 0 40px 0 40px;
+  background-color: var(--color-navbar);
+  padding-bottom: 10px ;
+}
+
+.tituloPaginacion{
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-navbar);
+  margin-top: 0;
+  /* margin-right: 60px; */
+}

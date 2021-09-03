@@ -1,0 +1,67 @@
+:root {
+    --color-azul: #0075e0;
+    --color-amarillo: #ff8f47;
+    --color-navbar: #f1f1f1;
+    --color-negro: #000000;
+    --color-white: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+
+/* TITULO  ORGANIZACIÓN*/
+.tituloOrganizacion{
+    background-color: var(--color-negro);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.tituloOrga{
+    color: var(--color-white);
+}
+
+/* HEADER TABLA */
+.headerTabla{
+  background-color: var(--color-navbar);
+  padding: 30px 0 30px 0;
+  /* border-color: saddlebrown !important; */
+}
+
+.inputHeaderTabla{
+  margin-right: 30px;
+}
+
+.headerTabla .mostrar {
+  padding-left: 40px !important;
+}
+
+.tablaOrganizacion{
+  padding: 0 40px 0 40px;
+  background-color: var(--color-navbar);
+  padding-bottom: 10px ;
+}
+
+.tituloPaginacion{
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-navbar);
+  margin-top: 0;
+  /* margin-right: 60px; */
+}
+
+
+  
+/*VENTANA EMERGENTE*/
+  .abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .form {
+    width: 450px;
+  }
+
+  /*FIN VENTANA EMERGENTE*/

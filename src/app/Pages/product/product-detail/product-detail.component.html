@@ -1,0 +1,118 @@
+<section id="cards" class="mt-4 animated fadeIn">
+    <div class="container">
+        <div class="row mb-2">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow animated fadeIn">
+                    <img class="card-img-top" [src]="productBean.imageFile">
+                    <div class="card-body">
+                        <h6 class="name font-weight-bold">{{productBean.name}}</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 mb-4">
+                <div class="card shadow">
+                    <div class="card-header wrap-title">
+                        <h5 class="card-title">Información</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="info">
+                            <div class="info-content">
+                                <div class="score">4.5</div>
+                                <div>
+                                    <a><i class="fas fa-star"></i></a>
+                                    <a><i class="fas fa-star"></i></a>
+                                    <a><i class="fas fa-star"></i></a>
+                                    <a><i class="fas fa-star"></i></a>
+                                    <a><i class="fas fa-star-half-alt"></i></a>
+                                </div>
+                                <div class="from">Desde</div>
+                                <h4 class="price">S/ {{productBean.priceMin}}</h4>
+                                <div class="from">Hasta</div>
+                                <h4 class="price">S/ {{productBean.priceMax}}</h4>
+                                <!-- <p class="night">por noche</p> -->
+                            </div>
+                            <div class="info-detail">{{productBean.longDescription}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-md-8 mb-4 d-flex justify-content-end">
+            <div class="col-md-4 pl-0">
+                <div class="card shadow">
+                    <div class="card-header wrap-title">
+                        <h5 class="card-title">Ubicación</h5>
+                    </div>
+                    <div class="card-body">
+                        <span><i class="fas fa-map-marker-alt" style="margin-right: 10px; margin-bottom: 9px;"></i>Dirección: {{productBean.ubication}}</span>
+                        <img class="card-img-top mt-2" src="../../../../assets/images/croquis-example.jpeg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 pr-0">
+                <div class="card shadow">
+                    <div class="card-header wrap-title">
+                        <h5 class="card-title">Información de Bioseguridad</h5>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <h5>Qué puedes esperar durante tu estadía</h5>
+                            <p><i class="fas fa-check" style="margin-right: 10px; margin-bottom: 30px;"></i>Se requiere el uso de máscaras, barbijos o tapabocas para los huéspedes en zonas públicas.<br></p>
+                            <p><i class="fas fa-check" style="margin-right: 10px; margin-bottom: 30px;"></i>Se requieren máscaras, barbijos o tapabocas para el personal en zonas públicas.<br></p>
+                            <p><i class="fas fa-check" style="margin-right: 10px; margin-bottom: 30px;"></i>Alcohol en gel disponible para los huéspedes y el personal.<br></p>
+                            <p><i class="fas fa-check" style="margin-right: 10px; margin-bottom: 30px;"></i>Pisos marcados para el distanciamiento social.<br></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-------------------- Comentarios-------------------->
+        <h5 class="card-title mb-4">Comentarios</h5>
+        <div class="row mb-4" *ngFor="let comment of listCommentaries">
+            <div class="col-md-12 mb-4">
+                <div class="card shadow">
+                    <div class="wrap-title group-start">
+                        <h6 class="card-title">{{comment.username}}</h6>
+                        <div>
+                            <div class="starts">
+                                <a><i class="fas fa-star"></i></a>
+                                <a><i class="fas fa-star"></i></a>
+                                <a><i class="fas fa-star"></i></a>
+                                <a><i class="fas fa-star"></i></a>
+                                <a><i class="fas fa-star-half-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap-coment">
+                        <p class="coment">{{comment.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <a href="" class="show-more">Ver más...</a> -->
+
+        <div class="row mb-4 mt-4">
+            <div class="col-md-12 mb-4">
+                <div class="card shadow">
+                    <form [formGroup]="formCommentary" (ngSubmit)="saveCommentary()" novalidate>
+                        <div class="wrap-send-coment">
+                            <input type="text" formControlName="commentary" class="send-coment" placeholder="Escribir un comentario">
+                        </div>
+                        <div class="wrap-send-score">
+                            <div class="send-score">
+                                <a><i class="fas fa-star"></i></a>
+                                <a><i class="fas fa-star"></i></a>
+                                <a><i class="fas fa-star"></i></a>
+                                <a><i class="fas fa-star"></i></a>
+                                <a><i class="fas fa-star"></i></a>
+                            </div>
+                        </div>
+                        <div class="button-send">
+                            <input type="submit" value="Enviar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

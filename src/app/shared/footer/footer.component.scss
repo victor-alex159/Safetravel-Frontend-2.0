@@ -1,0 +1,92 @@
+/*Contenedor Principal*/
+.footer-dark {
+    padding:50px 0;
+    color:#f0f9ff;
+    background-color:#242424;
+  }
+  
+  @media (max-width:767px) {
+    .footer-dark .item:not(.social) {
+      text-align:center;
+      padding-bottom:20px;
+    }
+  }
+  
+  /*Centrado de los íconos de las redes sociales*/
+  .footer-dark .item.social {
+    text-align:center;
+  }
+  
+  @media (max-width:991px) {
+    .footer-dark .item.social {
+      text-align:center;
+      margin-top:20px;
+    }
+  }
+  
+  /*Posicicón de los íconos*/
+  .footer-dark .item.social > a {
+    font-size:20px;
+    width:36px;
+    height:36px;
+    line-height:36px;
+    display:inline-block;
+    text-align:center;
+    margin:0 30px;
+    padding: 10px;
+    color:#0075E0;
+    
+   
+  
+  }
+  /*Opacidad al pasar el cursor*/
+  .footer-dark .item.social > a:hover {
+    opacity:0.9;
+  }
+  
+  /*Safe*/
+  .safe{
+    font-size:35px; 
+    font-weight: bold;
+    color: #0075E0;
+  }
+  
+  /*Travel*/
+  .travel{
+    font-size:35px; 
+    font-weight: bold;
+    color: #FF8F47;
+  }
+  
+  
+  /*Linea divisoria del Footer*/
+  .linea{
+    position: relative;
+    height: 2.5px;
+    left: 10;
+    margin-top: 20px;
+    text-align: center;
+    background: #FF8F47;
+  
+  }
+  /*Texto del footer*/
+  .text-footer{
+    color: #0075E0;
+    margin-left: auto;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    
+  }
+  
+  /*Quitar subrayado a los textos del footer*/
+  .f_text{
+    text-decoration: none;
+  }
+  
+  .f_text:hover{
+    color: #FF8F47;
+  }
+  
+  
+  

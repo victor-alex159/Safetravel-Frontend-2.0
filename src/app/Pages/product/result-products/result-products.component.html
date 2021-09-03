@@ -1,0 +1,67 @@
+<div class="mt-4 animated fadeIn">
+    <div class="row mb-4 d-flex justify-content-center">
+        <form class="w-50" [formGroup]="formSearch" (ngSubmit)="search()" novalidate>
+            <input class="form-control" type="search" formControlName="productName" aria-label="Search" placeholder="Buscar...">
+            <div class="col text-center mt-3">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="row animated fadeIn">
+        <div class="col-4 animated fadeIn">
+            <div class="row-md-4 mb-4 mt-3">
+                <div class="card shadow p-1 animated fadeIn">
+                  <div class="card-body">
+                    <div class="card-header font-weight-bold">
+                        <h5>Bioseguridad</h5>
+                    </div>
+                    <div class="col">
+                        <label>
+                          <input type="checkbox">
+                          Establecimientos que tomaron medidas de bioseguridad
+                        </label>
+                    </div>
+                    <div class="card-header font-weight-bold">
+                        <h5>Servicios</h5>
+                    </div>
+                    <div *ngFor="let service of listServices; let i=index" class="col">
+                        <label>
+                          <input type="checkbox" [value]="service.code" (change)="selectService($event)">
+                          {{service.description}}
+                        </label>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 container animated fadeIn">
+            <div class="row-md-4 mb-4 mt-3" *ngFor="let product of productList | slice: (page-1) * pageSize : page * pageSize; index as i">
+                <div class="card shadow animated fadeIn">
+                    <div class="card-header font-weight-bold">
+                        <h5>{{product.name}}</h5>
+                    </div>
+                    <div class="row card-body p-2">
+                        <div class="col-md-4">
+                            <img class="card-img-top" [src]="product.imageFile">
+                            <div class="container text-center">
+                                <div class="from">Desde</div>
+                                <h4 class="price">S/ {{product.price}}</h4>
+                                <p class="night">por noche</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                              <p class="card-text p-2">{{product.description}}</p>
+                              <div class="col d-flex justify-content-end">
+                                  <a (click)="getProductId(product.id)" class="btn btn-primary">Ver Información</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ngb-pagination class="d-flex justify-content-center" [(page)]="page" [pageSize]="pageSize" [collectionSize]="productList.length"></ngb-pagination>
+</div>

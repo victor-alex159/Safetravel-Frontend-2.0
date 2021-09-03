@@ -1,0 +1,199 @@
+<!-- CREAR CUENTA USUARIO -->
+<section class="animated fadeIn">
+    <div class="imgBx">
+        <img src="../../../../assets/images/Rectangle30.jpg" alt="Rectangle30.jgp">
+    </div>
+    <div class="contentBx">
+        <div class="formBx">
+            <div class="title">
+                <h2>Registro</h2>
+                <br><br>
+            </div>
+            <form [formGroup]="formRegister" (ngSubmit)="save(formRegister)" novalidate>
+                <div class="inputBx">
+                    <span>Tipo de usuario</span>
+                    <select #typeUser (change)="cambio(typeUser.value)">
+                        <option disabled selected>Tipo de usuario</option>
+                        <option value="Organizacion">Organización</option>
+                        <option value="Turista">Turista</option>
+                    </select>
+                </div>
+                <h5 *ngIf="!organizationData">Datos Personales</h5>
+                <h5 *ngIf="organizationData">Datos del administrador</h5>
+                <br>
+                <div class="inputBx">
+                    <span>Nombres</span>
+                    <input type="text" formControlName="name">
+                    <div *ngIf="isRegister && formRegister.controls['name'].errors">
+                        <span *ngIf="formRegister.controls['name'].errors.required" class="text-danger">
+                            Nombre es requerido
+                        </span>
+                    </div>
+                </div>
+                <div class="inputBx">
+                    <span>Apellido paterno</span>
+                    <input type="text" formControlName="lastname">
+                    <div *ngIf="isRegister && formRegister.controls['lastname'].errors">
+                        <span *ngIf="formRegister.controls['lastname'].errors.required" class="text-danger">
+                            Apellido paterno es requerido
+                        </span>
+                    </div>
+                </div>
+                <div class="inputBx">
+                    <span>Apellido materno</span>
+                    <input type="text" formControlName="surname">
+                    <div *ngIf="isRegister && formRegister.controls['surname'].errors">
+                        <span *ngIf="formRegister.controls['surname'].errors.required" class="text-danger">
+                            Apellido Materno es requerido
+                        </span>
+                    </div>
+                </div>
+                <div class="inputBx">
+                    <span>Fecha de nacimiento</span>
+                    <input type="date" formControlName="birthDate">
+                    <div *ngIf="isRegister && formRegister.controls['birthDate'].errors">
+                        <span *ngIf="formRegister.controls['birthDate'].errors.required" class="text-danger">
+                            F.de nacimiento es requerido
+                        </span>
+                    </div>
+                </div>
+                <div class="inputBx">
+                    <span>DNI</span>
+                    <input type="text" formControlName="documentNumber">
+                    <div *ngIf="isRegister && formRegister.controls['documentNumber'].errors">
+                        <span *ngIf="formRegister.controls['documentNumber'].errors.required" class="text-danger">
+                            N° de documento es requerido
+                        </span>
+                    </div>
+                </div>
+                <div class="inputBx">
+                    <span>Género</span>
+                    <div>
+                        <label for="m"> Masculino</label>
+                        <input id="m" type="radio" name="genderType" [value]='this.constants.TYPE_GENDER_MALE' formControlName="genderType">
+                    </div>
+                    <div>
+                        <label for="f"> Femenino</label>
+                        <input id="f" type="radio" name="genderType" [value]='this.constants.TYPE_GENDER_FEMALE' formControlName="genderType">
+                    </div>
+                    <div *ngIf="isRegister && formRegister.controls['genderType'].errors">
+                        <span *ngIf="formRegister.controls['genderType'].errors.required" class="text-danger">
+                            Género es requerido
+                        </span>
+                    </div>
+                </div>
+                <div class="inputBx">
+                    <span>Usuario</span>
+                    <input type="text" formControlName="username">
+                    <div *ngIf="isRegister && formRegister.controls['username'].errors">
+                        <span *ngIf="formRegister.controls['username'].errors.required" class="text-danger">
+                            Usuario es requerido
+                        </span>
+                    </div>
+                </div>
+                <div class="inputBx">
+                    <span>Contraseña</span>
+                    <input type="password" formControlName="password">
+                    <div *ngIf="isRegister && formRegister.controls['password'].errors">
+                        <span *ngIf="formRegister.controls['password'].errors.required" class="text-danger">
+                            Contraseña es requerido
+                        </span>
+                    </div>
+                </div>
+                <div class="inputBx">
+                    <span>Email</span>
+                    <input type="email" formControlName="email">
+                    <div *ngIf="isRegister && formRegister.controls['email'].errors">
+                        <span *ngIf="formRegister.controls['email'].errors.required" class="text-danger">
+                            Email es requerido
+                        </span>
+                    </div>
+                </div>
+                <div class="inputBx">
+                    <span>Celular</span>
+                    <input type="text" formControlName="phone">
+                    <div *ngIf="isRegister && formRegister.controls['phone'].errors">
+                        <span *ngIf="formRegister.controls['phone'].errors.required" class="text-danger">
+                            Celular es requerido
+                        </span>
+                    </div>
+                </div>
+
+                <div id="dataOrganization">
+                    <h5>Datos de tu Organización</h5><br>
+                    <div class="inputBx">
+                        <span>Razón social</span>
+                        <input type="text" formControlName="nameOrganization">
+                        <div *ngIf="isRegister && formRegister.controls['nameOrganization'].errors">
+                            <span *ngIf="formRegister.controls['nameOrganization'].errors.required" class="text-danger">
+                                Razón social es requerido
+                            </span>
+                        </div>
+                    </div>
+                    <div class="inputBx">
+                        <span>RUC</span>
+                        <input type="text" formControlName="ruc">
+                        <div *ngIf="isRegister && formRegister.controls['ruc'].errors">
+                            <span *ngIf="formRegister.controls['ruc'].errors.required" class="text-danger">
+                                Ruc es requerido
+                            </span>
+                        </div>
+                    </div>
+                    <div class="inputBx">
+                        <span>Dirección</span>
+                        <input type="text" formControlName="direction">
+                        <div *ngIf="isRegister && formRegister.controls['direction'].errors">
+                            <span *ngIf="formRegister.controls['direction'].errors.required" class="text-danger">
+                                Dirección es requerido
+                            </span>
+                        </div>
+                    </div>
+                    <div class="inputBx">
+                        <span>Teléfono</span>
+                        <input type="text" formControlName="phoneOrganization">
+                        <div *ngIf="isRegister && formRegister.controls['phoneOrganization'].errors">
+                            <span *ngIf="formRegister.controls['phoneOrganization'].errors.required" class="text-danger">
+                                Celular es requerido
+                            </span>
+                        </div>
+                    </div>
+                    <div class="inputBx">
+                        <span>Responsable de pago</span>
+                        <input type="text" formControlName="responsablePaymentName">
+                        <div *ngIf="isRegister && formRegister.controls['responsablePaymentName'].errors">
+                            <span *ngIf="formRegister.controls['responsablePaymentName'].errors.required" class="text-danger">
+                                Nombre es requerido
+                            </span>
+                        </div>
+                    </div>
+                    <div class="inputBx">
+                        <span>Celular del responsable de pago</span>
+                        <input type="text" formControlName="responsablePaymentPhone">
+                        <div *ngIf="isRegister && formRegister.controls['responsablePaymentPhone'].errors">
+                            <span *ngIf="formRegister.controls['responsablePaymentPhone'].errors.required" class="text-danger">
+                                Celular es requerido
+                            </span>
+                        </div>
+                    </div>
+                    <div class="inputBx">
+                        <span>Correo del responsable de pago</span>
+                        <input type="text" formControlName="responsablePaymentEmail">
+                        <div *ngIf="isRegister && formRegister.controls['responsablePaymentEmail'].errors">
+                            <span *ngIf="formRegister.controls['responsablePaymentEmail'].errors.required" class="text-danger">
+                                Email es requerido
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inputBx login">
+                    <input type="submit" value="Guardar">
+                </div>
+                <div class="inputBx">
+                    <p>Tienes cuenta en SafeTravel?<a href=""> Inicia Sesión</a> </p>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>

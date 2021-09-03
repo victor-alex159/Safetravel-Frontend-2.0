@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div id="navegacion" class="container mb-0 mt-0 pt-4 pb-4">
+        <!--LOGO-->
+        <a class="navbar-brand" [routerLink]="['/']">
+            <h1>Safe<span class="logo-yellow">Travel.pe</span></h1>
+        </a>
+
+        <!--NAVEGACION-->
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active ml-4 pt-4">
+                    <a class="nav-link" [routerLink]="['/']">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown ml-4 pt-4">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Lugares
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" [routerLink]="['/pr/hoteles']">Hoteles</a>
+                        <a class="dropdown-item" [routerLink]="['/pr/restaurantes']">Restaurantes</a>
+                    </div>
+                </li>
+                <li class="nav-item ml-4 pt-4">
+                    <a [routerLink]="['/about']" class="nav-link">Nosotros</a>
+                </li>
+                <li class="nav-item ml-4 pt-4">
+                    <a class="nav-link" [routerLink]="['/contact']">Contacto</a>
+                </li>
+
+                <li *ngIf="this.authService.hasRole('Administrador')" class="nav-item dropdown ml-4 pt-4">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Administrador
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" [routerLink]="['/org/list']">Organizaciones</a>
+                        <a class="dropdown-item" [routerLink]="['/pr/validate']">Validar Empresas</a>
+                        <a class="dropdown-item" [routerLink]="['/pr/list']">Empresas</a>
+                        <a class="dropdown-item" [routerLink]="['/us/list']">Usuarios</a>
+                        <a class="dropdown-item" [routerLink]="['/services']">Servicios</a>
+                    </div>
+                </li>
+
+                <li *ngIf="this.authService.hasRole('Administrador - Organizacion')" class="nav-item dropdown ml-4 pt-4">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Administrador Organización
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" [routerLink]="['/pr/list']">Mis Empresas</a>
+                    </div>
+                </li>
+
+                <li>
+                    <div id="btnLR">
+                        <form class="form-inline my-2 my-lg-0">
+                            <button *ngIf="!this.authService.isAthenticated()" [routerLink]="['/log']" id="btnLogin" class="btn btn-primary my-2 my-sm-0 ml-4" type="button">Iniciar Sesion</button>
+                            <button *ngIf="!this.authService.isAthenticated()" [routerLink]="['/us/register-user']" id="btnRegister" class="btn btn-warning my-2 my-sm-0 ml-2" type="button">Registrarse</button>
+                        </form>
+                        <form class="form-inline my-2 my-lg-0">
+                            <button *ngIf="this.authService.isAthenticated()" (click)="logout()" id="btnRegister" class="btn btn-danger my-2 my-sm-0 ml-2" type="button"><i class="fas fa-sign-out-alt"></i>Salir</button>
+                        </form>
+
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
